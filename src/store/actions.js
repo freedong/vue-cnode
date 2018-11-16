@@ -1,4 +1,4 @@
-
+import * as type from './mutation-types.js'
 const actions = {
   // es6写法
   async getHomeData({commit,state},obj){
@@ -9,7 +9,10 @@ const actions = {
       });
     });
     // 触发首页数据
-
+    commit(type.GET_HOME_DATA,{
+      type:obj.tab,
+      data:await getData
+    });
   },
 
 };
